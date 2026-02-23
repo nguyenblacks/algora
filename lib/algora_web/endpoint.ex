@@ -87,9 +87,10 @@ defmodule AlgoraWeb.Endpoint do
           nil ->
             redirect_to_canonical_host(conn, conn.request_path)
 
-          _user ->
-            Algora.Activities.alert("👀 Someone is viewing https://#{subdomain}.algora.io", :critical)
-            redirect_to_canonical_host(conn, Path.join(["/#{subdomain}/candidates"]))
+            _user ->
+  
+           redirect_to_canonical_host(conn, Path.join(["/#{subdomain}/candidates"]))
+            
         end
 
       _ ->
